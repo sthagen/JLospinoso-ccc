@@ -275,6 +275,7 @@ or %zx for a hexadecimal representation." The correct format specifier for size_
               <li><a href="https://github.com/JLospinoso/ccc/issues/44">p. 97</a> The C++ Standard says that thread_local variable lifetimes begin <i>at latest</i> upon first use by the thread. The text
               implies that the thread_local life time is similar to a static lifetime. You can modify Listing 4-6 by inserting the line "const auto t2_ptr = &t2;" at the very beginning of main, or at
               namespace scope.</li>
+              <li><a href="https://github.com/JLospinoso/ccc/issues/173">p. 140</a> Listing 5-6 is misleading. <a href="https://github.com/JLospinoso/ccc/blob/master/chapter_5/listing_5_6.cpp">This updated listing</a> illustrates better how private members interact with inheritance.</li>
               <li><a href="https://github.com/JLospinoso/ccc/issues/109">p. 160</a> SimpleUniquePointer's parameterless
                 constructor should not be default. It should initialize the pointer member to nullptr. Also, the move assignment operator and the destructor do not need
                 to check if pointer equals nullptr. Deleting a nullptr is totally valid.</li>
@@ -289,6 +290,7 @@ or %zx for a hexadecimal representation." The correct format specifier for size_
                 <li><a href="https://github.com/JLospinoso/ccc/issues/53">p. xl</a> In Listing 4, "mannie_service" should read "make_sentient"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/33">p. xliv</a> "and the function in the Jabberwock namespace" should read "and the function in the Func namespace"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/54">p. liv</a> "the destructor cleans up file.file_pointer for you (2)" should read "...(3)"</li>
+                <li><a href="https://github.com/JLospinoso/ccc/issues/167">p. 10</a> "$ g++-8 –version" shoud read "$ g++-8 --version"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/59">p. 18</a> "hexadecimal and octal output" shoud read "hexadecimal, decimal, and octal output"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/62">p. 21</a> "These symbols, // or /**/, tell the compiler" should read "The // symbol tells the compiler"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/92">p. 41</a> "C type in the <stddef> header" should read "C type in the C library header <stddef.h>"</li>
@@ -322,6 +324,7 @@ or %zx for a hexadecimal representation." The correct format specifier for size_
                 <li><a href="https://github.com/JLospinoso/ccc/issues/146">p. 156</a> "T(2) mean(T*(3) values, size_t length) {" should read "T(2) mean(const T*(3) values, size_t length) {"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/95">p. 158</a> In Listing 6-12, "char mean(const char* values, size_t length)" should read "size_t mean(const size_t* values, size_t length)" and "char result{};" should read "size_t result{}".</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/85">p. 159</a> "For example, if a template function’s return type is a template argument," should read "For example, if a template function’s return type is a template argument that's entirely independent of other function and template arguments,"</li>
+                <li><a href="https://github.com/JLospinoso/ccc/issues/174">p. 160</a> Listing 6-15 could be improved by modifying the consumer function to take an rvalue reference.</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/81">p. 167</a> The paragraph "The concept is composed of three Boolean expressions AND-ed (&&) together: two type traits (1) (3) and a requires expression." should read as follows: "The concept is composed of a type trait (1) and a requires containing two requirement expressions (2) (3)."</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/24">p. 175</a> "element-type(param-name&)[array-length]" should read "element-type(&param-name)[array-length]"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/82">p. 175</a> "out_of_bounds" should read "std::out_of_range"</li>
@@ -331,6 +334,7 @@ or %zx for a hexadecimal representation." The correct format specifier for size_
                 <li><a href="https://github.com/JLospinoso/ccc/issues/84">p. 200</a> "The address refers to the address of x (1) and prints 0 (2)." should read "The print_addr function prints the address of x (1) and the value of nullptr, 0 (2)."</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/10">p. 203</a> Listing 7-14 Caption, "A refactor of Listing 7-13 using a static_cast..." should read "A refactor of Listing 7-13 using a reinterpret_cast...".</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/144">p. 205</a> "whchar_t" should read "wchar_t".</li>
+                <li><a href="https://github.com/JLospinoso/ccc/issues/166">p. 237</a> "const auto x = range.begin()" should read "auto x = range.begin()".</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/20">p. 239</a> To assign a label, prepend a statement with the desired name of the label followed by a <b>colon.</b></li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/46">p. 241</a> "Implement a PrimeNumberRange class that can be used in a range exception to iterate over" should read "Implement a PrimeNumberRange class that can be used in a range expression to iterate over"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/11">p. 251</a> "..., you call va_list with the va_list structure" should read "..., you call va_end with the va_list structure"</li>
@@ -347,6 +351,7 @@ or %zx for a hexadecimal representation." The correct format specifier for size_
                 <li><a href="https://github.com/JLospinoso/ccc/issues/49">p. 302</a> "You can add this into the AutoBus constructor, as demonstrated in Listing 10-27" should read "You can add this into the AutoBrake constructor, as demonstrated in Listing 10-27"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/29">p. 304</a> "single-header" should read "single_header" (to correspond with the correct subdirectory within Catch).</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/145">p. 311</a> "that share some a common theme" should read "that share a common theme"</li>
+                <li><a href="https://github.com/JLospinoso/ccc/issues/169">p. 313</a> "Listing 10-38: Intentionally commenting out the collision_threshold_s" should read "Intentionally commenting out the speed_mps"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/34">p. 319</a> Listing 10-41: Caption should read "Using Boost Test" rather than "Using Google Test" </li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/13">p. 327</a> Listing 10-50: "publish(A&#60;BrakeCommand&#62;)" should read "publish(A&#60;BrakeCommand&#62;())" </li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/14">p. 328</a> Table 10-2: "A&#60;type&#62;)()" should read "A&#60;type&#62;()"; "An&#60;type&#62;)()" should read "An&#60;type&#62;()"</li>
@@ -372,6 +377,9 @@ or %zx for a hexadecimal representation." The correct format specifier for size_
                 <li><a href="https://github.com/JLospinoso/ccc/issues/104">p. 432</a> Listing 13-22 initializes the nybble 0101 incorrectly; it should read "std::bitset<4> bs(0b1010);". It would be helpful to add a note that operator[] accesses the bits such that the 0-th element is the least-significant bit.</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/105">p. 433</a> "Flips the i-th bit to zero." should read "Flips the i-th bit."</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/39">p. 437</a> "when you give the key 8 (3)" should read "when you give the key 100 (3)"</li>
+                <li><a href="https://github.com/JLospinoso/ccc/issues/170">p. 445</a> "Performs braced initialization of a newly constructed ordered set" should make more explicit that the "braced initialization" occurs using the elements indicated by the ellipses.</li>
+                <li><a href="https://github.com/JLospinoso/ccc/issues/171">p. 451</a> "m.emplace_hint(k, ...)" should read "m.emplace_hint(itr, ...)"</li>
+                <li><a href="https://github.com/JLospinoso/ccc/issues/172">p. 451</a> "m.try_emplace(itr, ...)" should read "m.try_emplace(k, ...)"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/31">p. 451</a> "Throws std::out_of_bounds" should read "Throws std::out_of_range"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/17">p. 456</a> "You can remove subtrees from a ptree using the get_child method, ..." should read "You can get subtrees from a ptree using the get_child method, ..."</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/106">p. 460</a> Exercise 13-4 is a duplicate of exercise 13-1 and can be ignored. (Kindle only: "Implement a Matrix class ..." is an unnumbered exercise. After removing the duplicate exercise 13-4, this exercise would be labeled 13-6.)</li>
@@ -533,6 +541,9 @@ or %zx for a hexadecimal representation." The correct format specifier for size_
             <p class="text-left">p. 310, 325, 328: <a
                     href="https://github.com/google/googletest/blob/master/README.md">Google Test/Google
                 Mocks Documentation</a></p>
+            <p class="text-left">p. 310: <a href="https://github.com/bliutwo/google_test_guide#instructions-for-google-c-testing-for-dummies-unix-edition">
+              Instructions for Google C++ Testing (For Dummies), Unix Edition</a></p>
+
 
             <p class="text-left">p. 317: <a
                     href="https://www.boost.org/doc/libs/1_70_0/libs/test/doc/html/index.html">Boost
@@ -551,7 +562,6 @@ or %zx for a hexadecimal representation." The correct format specifier for size_
 
             <p class="text-left">p. 339: <a href="https://martinfowler.com/articles/is-tdd-dead/">Is TDD
                 Dead?</a></p>
-
 
             <h4 class="font-italic">Chapter 11: Smart Pointers</h4>
             <p class="text-left">p. 349: <a
