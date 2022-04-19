@@ -59,7 +59,7 @@
                         <li><a href="https://bookshout.com/ebooks/c-crash-course">Book Shout</a></li>
                         <li><a href="https://github.com/JLospinoso/ccc">GitHub - JLospinoso/ccc</a></li>
                         <li><a href="https://twitter.com/jalospinoso">Twitter - @jalospinoso</a></li>
-                        <li><a href="mailto:ccc@lospi.net">Email the Author - ccc@lospi.net</a></li>
+                        <li><a href="mailto:josh@ccc.codes">Email the Author - josh@ccc.codes</a></li>
                     </ol>
                 </div>
             </div>
@@ -184,6 +184,14 @@ cmake ..</code></pre>
                     57: add ; after first } in second code block
                 </li>
                 <li>
+                    61: In discussing omission of fields from right to left, compilers will actually implicitly convert the bool to a char. So this is more accurate:
+                    <br>
+                    You can only omit fields from right to left, so the following (dangerously) will not do what the programmer probably intended:
+                    PodStruct initialized_pod4 = { 42, true };
+                    In this listing, member a initializes to 42, so far so good. Unfortunately, true implicitly converts to a char, and the result is that the first element of b is 1, while c is false.
+
+                </li>
+                <li>
                     62: In Warning section, change "Whether array_5" to "Whether array_4"
                 </li>
                 <li>
@@ -272,6 +280,11 @@ cmake ..</code></pre>
                 </li>
                 <li>
                     216: in code block, change %zd to %zu
+                </li>
+                <li>
+                    221: In Listing 8-9, the const qualifier placed incorrectly.
+                    Instead of To cast(From value) const {
+                    it is placed after struct name: struct NarrowCaster const {.
                 </li>
                 <li>
                     223: in code block, change %zd to %zu
@@ -415,7 +428,9 @@ cmake ..</code></pre>
                     to
                     <br>
                     Listing 21-12 illustrates how you can retrieve values from a variable_map.
-
+                </li>
+                <li>
+                    713: Exercise 21-1 references the "asynchronous uppercasing echo server in Listing 20-12" but Listing 20-12 contains the synchronous uppercasing echo server. The asynchronous uppercasing echo server appears in Listing 20-14.
                 </li>
             </ul>
         </div>
@@ -548,11 +563,13 @@ or %zx for a hexadecimal representation." The correct format specifier for size_
                 <li><a href="https://github.com/JLospinoso/ccc/issues/177">p. 493</a> In the Summary of string Manipulation Methods section, the last sentence reads "invalidates raw pointers and iterators to v's elements ..." It should read "invalidates raw pointers and iterators to s's elements ..."</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/110">p. 495</a> The "this" in "The find_first_of function accepts a string and locates the first character in this contained in the argument." should have literal formatting.</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/178">p. 497</a> In the Summary of string Search Methods section, "pos" should read "p"</li>
+                <li><a href="https://github.com/JLospinoso/ccc/issues/111">p. 507</a> "Returns the character of the first position of sub-match i, which defaults to 0" should read "Returns the position of the first character of the specified match or sub-match.".</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/111">p. 508</a> There's an issue with the font in "$' for the characters before a match, $' for the characters after the match,". It should should read $` for the characters before a match, $´ for the characters after the match,".</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/112">p. 513</a> "In this table, r is a string range, and beg and end are element comparison predicates" should read "...are characters defining the range". The corresponding entry in Table 15-13 should read "Contained in the range from beg to end". The range is not half-open.</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/113">p. 519</a> "First instance of s2 in s1" should read "Last instance of s2 in s1".</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/114">p. 519</a> "In this table, s, s1, and s2 are strings; p is an element comparison predicate; rgx is a regular expression; and n is an integral value" should also mention that "fnd is a finder".</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/115">p. 546</a> "Writing Files to sdout" should read "Writing Files to stdout".</li>
+                <li><a href="https://github.com/JLospinoso/ccc/issues/189">p. 536</a> "ostream& operator<<(ostream& s, vector&lt;T&gt; v) {" should read "ostream& operator<<(ostream& s, const vector&lt;T&gt;& v) {".</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/118">p. 561</a> Kindle Only: "last_write_time( p, [t] [ec]), which, if tect is provided," should read "...if t is provided,"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/119">p. 562</a> Kindle Only: "anerror" should read "an error"</li>
                 <li><a href="https://github.com/JLospinoso/ccc/issues/120">p. 571</a> "perform a recursive directory" should read "perform a recursive directory search"</li>
